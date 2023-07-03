@@ -1,26 +1,16 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
-function App() {
+type Props = {
+  value: number;
+  onIncrement: () => void;
+  onDecrement: () => void;
+};
+export default function App({ value, onIncrement, onDecrement }: Props) {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <p>
+      counter: {value} time <button onClick={onIncrement}>+</button>
+      <button onClick={onDecrement}>-</button>
+    </p>
   );
 }
-
-export default App;
